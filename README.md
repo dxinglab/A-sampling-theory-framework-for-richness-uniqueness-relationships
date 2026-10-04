@@ -1,4 +1,4 @@
-# **R code for *Wang* & *Xing* "A sampling-theory baseline for richness–uniqueness relationships"**
+# **R code for *Wang* & *Xing* "A sampling-theory framework for richness–uniqueness relationships"**
 
 
 
@@ -8,10 +8,10 @@ Copyright © 2026 Xiaoning Wang and Dingliang Xing.
 
 
 
-Software code is released under the MIT License.If you use this code in academic work, please cite the associated publication.
+Software code is released under the MIT License.
+If you use this code in academic work, please cite the associated publication.
 
 Code associated with: dlxing@des.ecnu.edu.cn
-
 
 Input data are stored in `data`, intermediate results in `process data`, and figures in `figure`. LCBD and neutral-model basic functions are defined in`code/01-lcbd-models.R` and loaded by the analysis scripts.
 
