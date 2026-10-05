@@ -74,8 +74,8 @@ count_species_sets <- function(bcr_now) {
         match(as.integer(colnames(community)), status$AOU),
     ]
     bcc_available <- any(!is.na(status$USFWS_Breeding_BCC))
-    bcc_pool <- status$USFWS_Breeding_BCC == 1
-    bcc_pool[is.na(bcc_pool)] <- FALSE
+    bcc_pool <- local_pool & !is.na(status$USFWS_Breeding_BCC) &
+        status$USFWS_Breeding_BCC == 1
 
     data.frame(
         BCR = bcr_now,
@@ -115,8 +115,8 @@ summarise_framework <- function(bcr_now, framework_now) {
     status <- status[
         match(as.integer(colnames(community)), status$AOU),
     ]
-    bcc_pool <- status$USFWS_Breeding_BCC == 1
-    bcc_pool[is.na(bcc_pool)] <- FALSE
+    bcc_pool <- local_pool & !is.na(status$USFWS_Breeding_BCC) &
+        status$USFWS_Breeding_BCC == 1
 
     raw_selected <- routes[[paste0(framework_now, "_raw_selected")]]
     deviation_column <- if (framework_now == "coverage") {
